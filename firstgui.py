@@ -16,3 +16,5 @@ for image in picture:
     else:
       print(' ', end ="")
   print('')
+ 
+print('This is my first gui image!!!')
