@@ -1,15 +1,12 @@
 pipeline {
+    agent any
+    tools {
+        maven 'apache-maven-3.6.3' 
+    }
     stages {
-        stage {
+        stage('Build') {
             steps {
-                echo 'Hello, Maven'
                 sh 'mvn --version'
-            }
-        }
-        stage {
-            steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
             }
         }
     }
