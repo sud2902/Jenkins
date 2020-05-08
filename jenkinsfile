@@ -1,20 +1,19 @@
 pipeline {
     agent any
-
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                mvn -f clean
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                mvn -f test
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                mvn -f package
             }
         }
     }
