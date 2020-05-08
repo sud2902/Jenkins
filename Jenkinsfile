@@ -1,12 +1,19 @@
 pipeline {
     agent any
-    tools {
-        MavenDefault 'apache-maven-3.6.3' 
-    }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn --version'
+                sh 'mvn clean'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package'
             }
         }
     }
